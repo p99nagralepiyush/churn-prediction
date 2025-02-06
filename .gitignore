@@ -1,0 +1,18 @@
+# Ignore virtual environment
+ccp/
+
+# Ignore data files (since they can be large)
+data/
+
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore output files
+outputs/
