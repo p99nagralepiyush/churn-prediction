@@ -32,3 +32,21 @@
 - **Next Steps**:
   - Address class imbalance (e.g., using SMOTE).
   - Experiment with more advanced models (e.g., Random Forest, XGBoost).
+
+  ## Advanced Modeling Results (XGBoost)
+- **Algorithm**: XGBoost
+- **Performance Metrics (Before Tuning)**:
+  - Accuracy: 0.7956
+  - Precision: 0.6358
+  - Recall: 0.5335
+  - F1-Score: 0.5802
+  - AUC-ROC: 0.8422
+- **Performance Metrics (After Tuning)**:
+  - Accuracy: 0.8112
+  - Precision: 0.6931
+  - Recall: 0.5147
+  - F1-Score: 0.5908
+  - AUC-ROC: 0.8629
+- **Next Steps**:
+  - Address class imbalance (e.g., using SMOTE).
+  - Experiment with other advanced models (e.g., LightGBM, CatBoost).
