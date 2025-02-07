@@ -20,3 +20,15 @@
    - Split the dataset into training (80%) and testing (20%) sets.  
 4. **Saved Processed Data**:  
    - Saved the encoded, scaled, and split datasets to the `data/` folder.  
+
+   ## Baseline Model Results
+- **Algorithm**: Logistic Regression
+- **Performance Metrics**:
+  - Accuracy: 0.8169
+  - Precision: 0.6803
+  - Recall: 0.5818
+  - F1-Score: 0.6272
+  - AUC-ROC: 0.8615
+- **Next Steps**:
+  - Address class imbalance (e.g., using SMOTE).
+  - Experiment with more advanced models (e.g., Random Forest, XGBoost).

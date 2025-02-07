@@ -9,7 +9,7 @@ df = pd.read_csv('../data/telco_churn_cleaned.csv')
 categorical_columns = ['gender', 'Partner', 'Dependents', 'PhoneService', 'MultipleLines', 
                        'InternetService', 'OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 
                        'TechSupport', 'StreamingTV', 'StreamingMovies', 'Contract', 
-                       'PaperlessBilling', 'PaymentMethod']
+                       'PaperlessBilling', 'PaymentMethod', 'Churn']
 
 label_encoders = {}
 for column in categorical_columns:
