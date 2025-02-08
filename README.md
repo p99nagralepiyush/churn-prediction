@@ -50,3 +50,21 @@
 - **Next Steps**:
   - Address class imbalance (e.g., using SMOTE).
   - Experiment with other advanced models (e.g., LightGBM, CatBoost).
+
+  ## Addressing Class Imbalance (SMOTE)  
+- **Technique**: SMOTE (Synthetic Minority Oversampling Technique)  
+- **Class Distribution Before SMOTE**:  
+  - Non-Churn: 4138  
+  - Churn: 1496  
+- **Class Distribution After SMOTE**:  
+  - Non-Churn: 4138  
+  - Churn: 4138
+- **Performance Metrics (XGBoost with SMOTE)**:  
+  - Accuracy: 77.15%  
+  - Precision: 55.81%  
+  - Recall: 65.68%  
+  - F1-Score: 60.34%  
+  - AUC-ROC: 82.25%  
+- **Next Steps**:  
+  - Experiment with other techniques (e.g., ADASYN, class weights).  
+  - Combine SMOTE with hyperparameter tuning.  
