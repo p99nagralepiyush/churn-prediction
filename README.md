@@ -68,3 +68,21 @@
 - **Next Steps**:  
   - Experiment with other techniques (e.g., ADASYN, class weights).  
   - Combine SMOTE with hyperparameter tuning.  
+
+## Combining SMOTE with Hyperparameter Tuning  
+- **Technique**: SMOTE + GridSearchCV  
+- **Best Parameters**:  
+  - `colsample_bytree`: 0.8  
+  - `learning_rate`: 0.01  
+  - `max_depth`: 5  
+  - `n_estimators`: 200  
+  - `subsample`: 0.8  
+- **Performance Metrics (XGBoost with SMOTE + Tuning)**:  
+  - Accuracy: 75.02%  
+  - Precision: 51.78%  
+  - Recall: 82.04%  
+  - F1-Score: 63.49%  
+  - AUC-ROC: 85.49%  
+- **Next Steps**:  
+  - Experiment with other techniques (e.g., ADASYN, class weights).  
+  - Deploy the model and build a real-time prediction system.  
