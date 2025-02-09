@@ -114,3 +114,31 @@
     "MonthlyCharges": 29.85,
     "TotalCharges": 358.2
   }
+
+  ## Deployment to Render as Heroku was paid
+- **Render App URL**: [https://churn-prediction-ekdt.onrender.com](https://churn-prediction-ekdt.onrender.com)
+- **Endpoint**: `/predict`
+- **Input Format**: JSON
+- **Example Request**:
+  ```json
+  {
+    "gender": 1,
+    "SeniorCitizen": 0,
+    "Partner": 1,
+    "Dependents": 0,
+    "tenure": 12,
+    "PhoneService": 1,
+    "MultipleLines": 0,
+    "InternetService": 1,
+    "OnlineSecurity": 0,
+    "OnlineBackup": 0,
+    "DeviceProtection": 0,
+    "TechSupport": 0,
+    "StreamingTV": 0,
+    "StreamingMovies": 0,
+    "Contract": 1,
+    "PaperlessBilling": 1,
+    "PaymentMethod": 2,
+    "MonthlyCharges": 29.85,
+    "TotalCharges": 358.2
+  }
