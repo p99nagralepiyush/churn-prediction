@@ -9,6 +9,7 @@
 <body>
     <div class="container">
         <h1>Customer Churn Prediction</h1>
+        
         <form id="prediction-form">
             <label for="gender">Gender:</label>
             <select id="gender" name="gender">
@@ -46,6 +47,10 @@
             <button type="submit">Predict</button>
         </form>
 
+        <!-- Error message display -->
+        <div id="error-message" class="hidden error"></div>
+
+        <!-- Prediction Result -->
         <div id="result" class="hidden">
             <h2>Prediction Result</h2>
             <p><strong>Prediction:</strong> <span id="prediction"></span></p>
@@ -53,6 +58,6 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
