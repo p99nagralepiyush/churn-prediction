@@ -19,9 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
             Partner: parseInt(document.getElementById("Partner").value),
             Dependents: parseInt(document.getElementById("Dependents").value),
             tenure: parseFloat(document.getElementById("tenure").value),
+            PhoneService: parseInt(document.getElementById("PhoneService").value),
+            MultipleLines: parseInt(document.getElementById("MultipleLines").value),
+            InternetService: parseInt(document.getElementById("InternetService").value),
+            OnlineSecurity: parseInt(document.getElementById("OnlineSecurity").value),
+            OnlineBackup: parseInt(document.getElementById("OnlineBackup").value),
+            DeviceProtection: parseInt(document.getElementById("DeviceProtection").value),
+            TechSupport: parseInt(document.getElementById("TechSupport").value),
+            StreamingTV: parseInt(document.getElementById("StreamingTV").value),
+            StreamingMovies: parseInt(document.getElementById("StreamingMovies").value),
+            Contract: parseInt(document.getElementById("Contract").value),
+            PaperlessBilling: parseInt(document.getElementById("PaperlessBilling").value),
+            PaymentMethod: parseInt(document.getElementById("PaymentMethod").value),
             MonthlyCharges: parseFloat(document.getElementById("MonthlyCharges").value),
             TotalCharges: parseFloat(document.getElementById("TotalCharges").value)
-        };
+        };        
 
         console.log("Form Data Sent to API:", formData); // Debugging log
 
