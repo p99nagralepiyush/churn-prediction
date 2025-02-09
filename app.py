@@ -2,14 +2,13 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import joblib
 from flask_cors import CORS
-import os
 
 # Initialize Flask app
 app = Flask(__name__)
 CORS(app)  # Allow all origins
 
 # Load the trained model
-model_path = '../models/xgboost_smote_tuned.pkl'  # Ensure the model is in the same directory
+model_path = "models/xgboost_smote_tuned.pkl"  # Ensure the model is in the correct path
 try:
     model = joblib.load(model_path)
 except FileNotFoundError:
@@ -28,11 +27,25 @@ def predict():
             if field not in data:
                 return jsonify({"error": f"Missing field: {field}"}), 400
 
-        # Example prediction output
-        prediction = 1  # 1 = Churn, 0 = No Churn
-        probability = 0.85  # Example probability
+        # Convert data to DataFrame for model prediction
+        df = pd.DataFrame([data])
 
-        return jsonify({"prediction": prediction, "probability": probability})
+        # Ensure numerical columns are correctly formatted
+        df = df.astype({
+            "gender": int,
+            "SeniorCitizen": int,
+            "Partner": int,
+            "Dependents": int,
+            "tenure": float,
+            "MonthlyCharges": float,
+            "TotalCharges": float
+        })
+
+        # Make prediction
+        prediction = model.predict(df)[0]
+        probability = model.predict_proba(df)[0][1]
+
+        return jsonify({"prediction": int(prediction), "probability": float(probability)})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400
