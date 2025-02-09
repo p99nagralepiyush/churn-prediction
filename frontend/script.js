@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Display the result
             predictionText.textContent = data.prediction === 1 ? "Churn" : "No Churn";
-            probabilityText.textContent = data.probability.toFixed(4);
+            probabilityText.textContent = (data.probability * 100).toFixed(2) + "%";
             resultDiv.classList.remove("hidden");
         })
         .catch(error => {
