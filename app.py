@@ -1,8 +1,20 @@
 from flask import Flask, request, jsonify
+import pandas as pd
+import joblib
 from flask_cors import CORS
+import os
 
+# Initialize Flask app
 app = Flask(__name__)
-CORS(app)  # Enable CORS
+CORS(app)  # Allow all origins
+
+# Load the trained model
+model_path = '../models/xgboost_smote_tuned.pkl'  # Ensure the model is in the same directory
+try:
+    model = joblib.load(model_path)
+except FileNotFoundError:
+    print(f"Error: Model file '{model_path}' not found. Make sure it is in the correct path.")
+    model = None
 
 @app.route('/predict', methods=['POST'])
 def predict():
