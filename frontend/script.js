@@ -1,46 +1,50 @@
-document.getElementById('prediction-form').addEventListener('submit', function (e) {
+document.getElementById("prediction-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Get form data
     const formData = {
-        gender: document.getElementById('gender').value,
-        SeniorCitizen: document.getElementById('SeniorCitizen').value,
-        Partner: document.getElementById('Partner').value,
-        Dependents: document.getElementById('Dependents').value,
-        tenure: document.getElementById('tenure').value,
-        MonthlyCharges: document.getElementById('MonthlyCharges').value,
-        TotalCharges: document.getElementById('TotalCharges').value
+        gender: parseInt(document.getElementById("gender").value),
+        SeniorCitizen: parseInt(document.getElementById("SeniorCitizen").value),
+        Partner: parseInt(document.getElementById("Partner").value),
+        Dependents: parseInt(document.getElementById("Dependents").value),
+        tenure: parseFloat(document.getElementById("tenure").value),
+        MonthlyCharges: parseFloat(document.getElementById("MonthlyCharges").value),
+        TotalCharges: parseFloat(document.getElementById("TotalCharges").value)
     };
 
-    console.log('Form Data:', formData); // Debugging step to check what is being sent
+    console.log("Form Data Sent to API:", formData); // Debugging log
 
     // Send data to the API
-    fetch('https://churn-prediction-ekdt.onrender.com/predict', {
-        method: 'POST',
+    fetch("https://churn-prediction-ekdt.onrender.com/predict", {  // Replace with actual API URL
+        method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(formData)
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            return response.json().then(err => { 
+                throw new Error(`HTTP ${response.status}: ${err.error || "Unknown error"}`); 
+            });
         }
         return response.json();
     })
     .then(data => {
-        console.log('API Response:', data); // Debugging step to check API response
+        console.log("API Response:", data); // Debugging log
 
-        if (!data || typeof data.probability === 'undefined') {
-            throw new Error('Invalid API response: Missing "probability" field');
+        if (!data || typeof data.probability === "undefined") {
+            throw new Error("Invalid API response: Missing 'probability' field");
         }
 
-        document.getElementById('prediction').textContent = data.prediction === 1 ? 'Churn' : 'No Churn';
-        document.getElementById('probability').textContent = data.probability.toFixed(4);
-        document.getElementById('result').classList.remove('hidden');
+        // Update UI with prediction results
+        document.getElementById("prediction").textContent = data.prediction === 1 ? "Churn" : "No Churn";
+        document.getElementById("probability").textContent = data.probability.toFixed(4);
+        document.getElementById("result").classList.remove("hidden");
     })
     .catch(error => {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
+        console.error("Error:", error);
+        document.getElementById("result").innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+        document.getElementById("result").classList.remove("hidden");
     });
 });
