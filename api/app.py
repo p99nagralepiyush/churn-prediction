@@ -4,7 +4,7 @@ import joblib
 from flask_cors import CORS
 
 # Load the trained model
-model = joblib.load('models/xgboost_smote_tuned.pkl')
+model = joblib.load('../models/xgboost_smote_tuned.pkl')
 
 # Initialize Flask app
 app = Flask(__name__)
