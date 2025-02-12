@@ -8,87 +8,168 @@
 </head>
 <body>
     <div class="container">
-        <h1>📊 Customer Churn Prediction</h1>
-        <form id="prediction-form" class="form-grid">
-            <div class="form-column">
-                <label for="gender">Gender:</label>
-                <select id="gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-                
-                <label for="senior_citizen">Senior Citizen:</label>
-                <select id="senior_citizen">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+        <h1>Customer Churn Prediction</h1>
 
-                <label for="partner">Partner:</label>
-                <select id="partner">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+        <form id="prediction-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="gender">Gender:</label>
+                    <select id="gender" name="gender">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
 
-                <label for="dependents">Dependents:</label>
-                <select id="dependents">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div class="form-group">
+                    <label for="SeniorCitizen">Senior Citizen:</label>
+                    <select id="SeniorCitizen" name="SeniorCitizen">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
 
-                <label for="phone_service">Phone Service:</label>
-                <select id="phone_service">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div class="form-group">
+                    <label for="Partner">Partner:</label>
+                    <select id="Partner" name="Partner">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
 
-                <label for="multiple_lines">Multiple Lines:</label>
-                <select id="multiple_lines">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
-                </select>
+                <div class="form-group">
+                    <label for="Dependents">Dependents:</label>
+                    <select id="Dependents" name="Dependents">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="PhoneService">Phone Service:</label>
+                    <select id="PhoneService" name="PhoneService">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="MultipleLines">Multiple Lines:</label>
+                    <select id="MultipleLines" name="MultipleLines">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="InternetService">Internet Service:</label>
+                    <select id="InternetService" name="InternetService">
+                        <option value="0">DSL</option>
+                        <option value="1">Fiber Optic</option>
+                        <option value="2">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="OnlineSecurity">Online Security:</label>
+                    <select id="OnlineSecurity" name="OnlineSecurity">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="OnlineBackup">Online Backup:</label>
+                    <select id="OnlineBackup" name="OnlineBackup">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="DeviceProtection">Device Protection:</label>
+                    <select id="DeviceProtection" name="DeviceProtection">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="TechSupport">Tech Support:</label>
+                    <select id="TechSupport" name="TechSupport">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="StreamingTV">Streaming TV:</label>
+                    <select id="StreamingTV" name="StreamingTV">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="StreamingMovies">Streaming Movies:</label>
+                    <select id="StreamingMovies" name="StreamingMovies">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Contract">Contract Type:</label>
+                    <select id="Contract" name="Contract">
+                        <option value="0">Month-to-Month</option>
+                        <option value="1">One Year</option>
+                        <option value="2">Two Years</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="PaperlessBilling">Paperless Billing:</label>
+                    <select id="PaperlessBilling" name="PaperlessBilling">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="PaymentMethod">Payment Method:</label>
+                    <select id="PaymentMethod" name="PaymentMethod">
+                        <option value="0">Electronic Check</option>
+                        <option value="1">Mailed Check</option>
+                        <option value="2">Bank Transfer</option>
+                        <option value="3">Credit Card</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tenure">Tenure (months):</label>
+                    <input type="number" id="tenure" name="tenure" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="MonthlyCharges">Monthly Charges:</label>
+                    <input type="number" step="0.01" id="MonthlyCharges" name="MonthlyCharges" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="TotalCharges">Total Charges:</label>
+                    <input type="number" step="0.01" id="TotalCharges" name="TotalCharges" required>
+                </div>
             </div>
-            <div class="form-column">
-                <label for="internet_service">Internet Service:</label>
-                <select id="internet_service">
-                    <option value="DSL">DSL</option>
-                    <option value="Fiber optic">Fiber optic</option>
-                    <option value="No">No</option>
-                </select>
 
-                <label for="contract">Contract Type:</label>
-                <select id="contract">
-                    <option value="Month-to-Month">Month-to-Month</option>
-                    <option value="One Year">One Year</option>
-                    <option value="Two Year">Two Year</option>
-                </select>
-
-                <label for="payment_method">Payment Method:</label>
-                <select id="payment_method">
-                    <option value="Electronic Check">Electronic Check</option>
-                    <option value="Mailed Check">Mailed Check</option>
-                    <option value="Bank Transfer">Bank Transfer</option>
-                    <option value="Credit Card">Credit Card</option>
-                </select>
-
-                <label for="tenure">Tenure (months):</label>
-                <input type="number" id="tenure" placeholder="Enter Tenure">
-                
-                <label for="monthly_charges">Monthly Charges:</label>
-                <input type="number" id="monthly_charges" placeholder="Enter Monthly Charges">
-
-                <label for="total_charges">Total Charges:</label>
-                <input type="number" id="total_charges" placeholder="Enter Total Charges">
-            </div>
-            <button type="submit" class="full-width">Check Churn Risk</button>
+            <button type="submit">Predict</button>
         </form>
-        
-        <div id="result" class="result-box">
+
+        <div id="result" class="hidden">
             <h2>Prediction Result</h2>
-            <p><strong>Churn Prediction:</strong> <span id="prediction"></span></p>
+            <p><strong>Prediction:</strong> <span id="prediction"></span></p>
             <p><strong>Probability:</strong> <span id="probability"></span></p>
         </div>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
